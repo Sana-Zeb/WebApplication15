@@ -1,0 +1,94 @@
+﻿@model  IEnumerable<Student>
+
+    <br />
+    <a href="/Project/AddStudent" class="btn btn-info">Add New Student</a>
+    <br />
+
+    <form method="post" action="/Project/AllStudents">
+        <input type="text" id="SearchByName" name="SearchByName" />
+        @* <input type="text" id="SearchByClass" name="SearchByClass" />
+            <input type="text" id="SearchBySubject" name="SearchBySubject" />
+            <input type="text" id="dob" name="dob" /> *@
+        <input type="submit" value="Search" />
+    </form>
+
+    <table id="myTable" name="Tb" class="table table-bordered" >
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Class</td>
+                <td>Subject</td>
+                <td>RollNo</td>
+                <td>PhoneNum</td>
+                <td>FatherName</td>
+                <td>Address</td>
+                <td>Email</td>
+                
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (Student S in Model)
+            { 
+            <tr>
+                <td>
+                    @S.Id
+                </td>
+                <td>
+                    @S.Name
+                </td>
+                <td>
+                    @S.Class
+                </td>
+                <td>
+                    @S.Subject
+                    t
+                </td>
+                <td>
+                    @S.RollNo
+                </td>
+                <td>
+                    @S.PhoneNum
+                </td>
+                <td>
+                    @S.FatherName
+                </td>
+                <td>
+                    @S.Address
+                </td>
+                <td>
+                    @S.Email
+                </td>
+                <td>
+                    <a href="/Project/StudentDetail?Id=@S.Id" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-ok"></span> Detail</a>
+                    <a href="/Project/DeleteStudent?Id=@S.Id" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+                </td>
+
+            </tr>}
+
+            </tbody>
+
+        </table>
+
+
+    <img id="ik" src="https://pbs.twimg.com/profile_images/1034759395622756352/G3QDI4pv_400x400.jpg" />
+
+
+    @section abc
+        {
+        <script>
+
+        $(function () {
+
+            $('#myTable').DataTable();
+            $('#ik').draggable();
+            $('#nb').draggable();
+
+        });
+
+        </script>
+
+
+    }

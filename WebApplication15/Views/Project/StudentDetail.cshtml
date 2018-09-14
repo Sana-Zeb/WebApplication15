@@ -1,0 +1,27 @@
+﻿@model Student
+
+
+<h1>
+    Detail of @Model.Name
+
+</h1>
+
+
+
+
+<h1>ID: @Model.Id</h1>
+<h1>Name: @Model.Name</h1>
+<h1>Class: @Model.Class</h1>
+<h1>Subject: @Model.Subject</h1>
+<h1>Roll_No: @Model.RollNo</h1>
+<h1>Phone_Num: @Model.PhoneNum</h1>
+<h1>Father_Name: @Model.FatherName</h1>
+<h1>Address: @Model.Address</h1>
+<h1>Email:@Model.Email</h1>
+
+
+
+
+<a href="/Project/AllStudents" class="btn btn-success"><span class="glyphicon glyphicon-list"></span> All Students</a>
+<a href="/Project/DeleteStudent?Id=@Model.Id" class="btn btn-danger"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+<a href="/Project/EditStudent?Id=@Model.Id" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
